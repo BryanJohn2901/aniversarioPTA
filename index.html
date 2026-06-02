@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oferta de Aniversário PTA | Bundle Completo Elite</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#020617',        
+                            surface: '#0f172a',   
+                            primary: '#3b82f6',   
+                            primaryHover: '#2563eb',
+                            accent: '#06b6d4',    
+                            textPrimary: '#f8fafc',
+                            textSecondary: '#cbd5e1',
+                            darkgray: '#05050a',
+                            success: '#10b981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif']
+                    },
+                    animation: {
+                        'shimmer': 'shimmer 1.5s infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        shimmer: {
+                            '100%': { transform: 'translateX(100%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        /* Glassmorphism Classes */
+        .glass-strong {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .bg-mesh {
+            position: fixed; inset: 0; z-index: -2;
+            background-color: #020617;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.3) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(8, 145, 178, 0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(8, 145, 178, 0.2) 0px, transparent 50%);
+        }
+        .bg-grid {
+            position: fixed; inset: 0; z-index: -1;
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+        .btn-premium {
+            position: relative;
+            background: linear-gradient(90deg, #2563eb, #06b6d4, #2563eb);
+            background-size: 200% auto;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.5s ease;
+        }
+        .btn-premium:hover {
+            background-position: right center;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+        }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .animate-marquee { animation: marquee 40s linear infinite; }
+        .text-outline-hover { color: transparent; -webkit-text-stroke: 1px rgba(0,0,0,0.22); }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+        #popup-inscricao { z-index: 2147483646; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6,
+        .font-heading {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* Utils */
+        .text-gradient {
+            background: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-textPrimary font-sans antialiased selection:bg-brand-primary selection:text-white">
+
+    <div class="bg-mesh"></div>
+    <div class="bg-grid"></div>
+
+    <nav id="nav" class="fixed top-2 sm:top-4 lg:top-6 left-0 right-0 z-50 px-3 sm:px-4 lg:px-0" data-aos="fade-down" data-aos-duration="1000">
+        <div class="mx-auto max-w-6xl">
+            <div class="relative flex items-center justify-between gap-2 px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 lg:px-7 lg:py-3 rounded-2xl sm:rounded-full border border-white/15 bg-slate-950/30 backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.2)]">
+                <a href="#" class="block hover:opacity-80 transition-opacity shrink-0">
+                    <img src="./logoPTA.svg" alt="Personal Trainer Academy" class="h-14 w-auto" width="160" height="56" loading="eager" decoding="async">
+                </a>
+                <div class="hidden md:flex items-center gap-5 lg:gap-8">
+                    <a href="#hero" class="text-[11px] lg:text-xs font-bold uppercase tracking-[0.14em] text-slate-300 hover:text-white">Início</a>
+                    <a href="#ancoragem" class="text-[11px] lg:text-xs font-bold uppercase tracking-[0.14em] text-slate-300 hover:text-white">Preço</a>
+                    <a href="#incluido" class="text-[11px] lg:text-xs font-bold uppercase tracking-[0.14em] text-slate-300 hover:text-white">Incluído</a>
+                    <a href="#oferta" class="text-[11px] lg:text-xs font-bold uppercase tracking-[0.14em] text-slate-300 hover:text-white">Oferta</a>
+                    <a href="#faq" class="text-[11px] lg:text-xs font-bold uppercase tracking-[0.14em] text-slate-300 hover:text-white">FAQ</a>
+                </div>
+                <button type="button" class="btn-abrir-popup inline-flex items-center justify-center bg-blue-600 text-white py-2.5 px-5 md:py-3 md:px-8 rounded-lg sm:rounded-xl font-black uppercase tracking-[0.12em] text-xs md:text-sm border-0 cursor-pointer hover:bg-cyan-500 transition">Garantir vaga</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-0">
+        <section id="hero" class="relative overflow-hidden pt-36 pb-20 lg:pt-44 lg:pb-28">
+            <div class="absolute inset-0">
+                <img src="./Gemini_Generated_Image_64hgse64hgse64hg.png" alt="" class="h-full w-full object-cover object-center" />
+                <div class="absolute inset-0 bg-slate-950/70"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-slate-950/85"></div>
+            </div>
+            <div class="relative z-10 mx-auto max-w-7xl px-6">
+                <div class="max-w-3xl space-y-8" data-aos="fade-up">
+                    <span class="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] text-cyan-300">
+                        <span class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                        Oferta de Aniversário PTA: Encerra em breve
+                    </span>
+                    <h1 class="font-heading text-4xl font-black uppercase leading-tight text-white md:text-6xl">
+                        Tudo que você precisa para dominar o mercado fitness.
+                        <span class="text-gradient"> Pague uma vez. Cresça para sempre.</span>
+                    </h1>
+                    <p class="text-lg text-slate-300 md:text-xl max-w-2xl">
+                        A maior oferta da história da Personal Trainer Academy reúne os 4 programas mais transformadores em um único acesso, por menos do que a Pós sozinha custa.
+                    </p>
+                    <div class="space-y-5">
+                        <div class="space-y-1">
+                            <p class="text-sm text-slate-400">
+                                De <span class="line-through">R$ 8.291</span> separados
+                            </p>
+                            <p class="font-heading text-4xl md:text-5xl font-bold leading-tight text-white">
+                                18x de <span class="text-cyan-400">R$ 249</span>
+                            </p>
+                            <p class="text-lg text-slate-300">
+                                ou <span class="font-heading text-2xl font-bold text-white">R$ 3.990</span> à vista
+                            </p>
+                        </div>
+                        <button type="button" class="btn-abrir-popup btn-premium inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full px-10 py-5 text-sm font-bold uppercase tracking-[0.12em] border-0 cursor-pointer">
+                            QUERO GARANTIR MINHA VAGA <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <p class="text-xs text-slate-400">Pagamento 100% seguro · Acesso imediato após confirmação</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative py-16 -mt-4">
+            <div class="mx-auto max-w-7xl px-6">
+                <div data-aos="zoom-in" class="relative mx-auto max-w-6xl group">
+                    <div class="absolute -inset-0.5 rounded-3xl bg-gradient-to-b from-blue-500/30 to-cyan-500/30 blur-xl opacity-50"></div>
+                    <div class="glass-panel relative overflow-hidden rounded-3xl p-8 md:p-10 border border-white/10">
+                        <div class="absolute -right-10 -top-10 opacity-[0.08] pointer-events-none transition-transform duration-700 group-hover:scale-110 group-hover:opacity-[0.14]">
+                            <i class="fa-solid fa-box-open text-[180px] text-cyan-400"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <h2 class="font-heading text-2xl font-black text-white mb-8 text-center md:text-left">O que você leva:</h2>
+                            <ul class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4">
+                                <li class="flex flex-col items-center text-center gap-3">
+                                    <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xl"><i class="fa-solid fa-graduation-cap"></i></div>
+                                    <div><h4 class="font-bold text-white text-sm md:text-base leading-snug">Pós-Graduação Biomecânica</h4><p class="text-xs text-slate-400 mt-1">Especialista PRO</p></div>
+                                </li>
+                                <li class="flex flex-col items-center text-center gap-3">
+                                    <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xl"><i class="fa-solid fa-chart-line"></i></div>
+                                    <div><h4 class="font-bold text-white text-sm md:text-base leading-snug">Master Perform</h4><p class="text-xs text-slate-400 mt-1">Acesso vitalício com atualizações</p></div>
+                                </li>
+                                <li class="flex flex-col items-center text-center gap-3">
+                                    <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xl"><i class="fa-solid fa-laptop-medical"></i></div>
+                                    <div><h4 class="font-bold text-white text-sm md:text-base leading-snug">Mapa da Consultoria Online</h4><p class="text-xs text-slate-400 mt-1">Acesso vitalício com atualizações</p></div>
+                                </li>
+                                <li class="flex flex-col items-center text-center gap-3">
+                                    <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xl"><i class="fa-solid fa-ticket"></i></div>
+                                    <div><h4 class="font-bold text-white text-sm md:text-base leading-snug">Ingresso Summit PTA 2026</h4><p class="text-xs text-slate-400 mt-1">17 e 18/10 em Curitiba</p></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ancoragem" class="py-16 bg-white border-y border-slate-200">
+            <div class="mx-auto max-w-5xl px-6 text-center">
+                <h2 class="font-heading text-3xl font-black text-slate-900 md:text-4xl">Você está levando <span class="text-slate-400 line-through">R$ 8.291</span> em programas por <span class="text-blue-600">R$ 3.990</span>.</h2>
+                <p class="mt-5 text-lg text-slate-600 max-w-4xl mx-auto">A Pós-Graduação em Biomecânica sozinha já custa R$ 5.000. O restante, Master Perform, Mapa da Consultoria Online e ingresso no Summit 2026, você está levando de graça.</p>
+            </div>
+        </section>
+
+        <section id="incluido" class="py-24 bg-slate-50 border-b border-slate-200">
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="text-center mb-14">
+                    <h2 class="font-heading text-3xl font-black text-slate-900 md:text-5xl">O que está incluído na oferta</h2>
+                    <p class="mt-4 text-slate-600 text-lg">Quatro programas completos. Uma única decisão.</p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2">
+                    <article class="rounded-2xl bg-white p-6 border border-slate-200 shadow-sm">
+                        <span class="text-xs font-bold uppercase text-blue-700 bg-blue-50 px-3 py-1 rounded-full">Formação Técnica</span>
+                        <h3 class="mt-4 text-xl font-black text-slate-900">Pós-Graduação em Biomecânica</h3>
+                        <p class="mt-2 text-slate-600 text-sm">A pós que transforma como você pensa o treino. Não é sobre executar, é sobre decidir.</p>
+                        <p class="mt-4 font-bold text-slate-900">R$ 5.000 · Por tempo determinado</p>
+                    </article>
+                    <article class="rounded-2xl bg-white p-6 border border-slate-200 shadow-sm">
+                        <span class="text-xs font-bold uppercase text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full">Método de Negócio</span>
+                        <h3 class="mt-4 text-xl font-black text-slate-900">Master Perform</h3>
+                        <p class="mt-2 text-slate-600 text-sm">Método completo para estruturar uma carreira sólida como personal.</p>
+                        <p class="mt-4 font-bold text-slate-900">R$ 1.997 · Vitalício com atualizações</p>
+                    </article>
+                    <article class="rounded-2xl bg-white p-6 border border-slate-200 shadow-sm">
+                        <span class="text-xs font-bold uppercase text-blue-700 bg-blue-50 px-3 py-1 rounded-full">Consultoria Online</span>
+                        <h3 class="mt-4 text-xl font-black text-slate-900">Mapa da Consultoria Online</h3>
+                        <p class="mt-2 text-slate-600 text-sm">Passo a passo para criar e vender sua consultoria online do zero.</p>
+                        <p class="mt-4 font-bold text-slate-900">R$ 997 · Vitalício com atualizações</p>
+                    </article>
+                    <article class="rounded-2xl bg-white p-6 border border-slate-200 shadow-sm">
+                        <span class="text-xs font-bold uppercase text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full">Evento Presencial</span>
+                        <h3 class="mt-4 text-xl font-black text-slate-900">Summit PTA 2026</h3>
+                        <p class="mt-2 text-slate-600 text-sm">O maior encontro de personal trainers do Sul. 2 dias em Curitiba.</p>
+                        <p class="mt-4 font-bold text-slate-900">R$ 297 · 17 e 18/10, Curitiba/PR</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Offer CTA Section -->
+        <section id="oferta" class="py-24 relative overflow-hidden border-t border-white/5 bg-brand-surface/50">
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-brand-primary/10 to-brand-accent/10 blur-[120px] rounded-full pointer-events-none"></div>
+            
+            <div class="mx-auto max-w-5xl px-6 relative z-10">
+                <div data-aos="zoom-in" class="relative rounded-[2.5rem] bg-gradient-to-b from-brand-surface/80 to-brand-bg/90 border border-white/10 p-2 shadow-[0_0_50px_rgba(59,130,246,0.15)] overflow-hidden backdrop-blur-xl">
+                    <div class="rounded-[2rem] border border-white/5 bg-[#05050a]/80 p-8 md:p-14 relative overflow-hidden">
+                        
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary"></div>
+                        
+                        <div class="text-center mb-12">
+                            <span class="inline-block rounded-full bg-brand-primary/10 border border-brand-primary/30 px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] text-brand-accent mb-5">
+                                <i class="fa-solid fa-gift mr-1"></i> Oferta Exclusiva Elite
+                            </span>
+                            <h2 class="font-heading text-3xl font-black text-white md:text-5xl uppercase tracking-tight">Acesso Completo ao Bundle</h2>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            
+                            <!-- Anchor Text -->
+                            <div class="space-y-6 text-center md:text-left">
+                                <h3 class="text-sm font-black text-brand-textSecondary uppercase tracking-widest mb-6 border-b border-white/10 pb-4">Resumo do Investimento</h3>
+                                <p class="text-lg text-brand-textSecondary leading-relaxed">
+                                    A Pós-Graduação em Biomecânica sozinha já custa <strong class="text-white">R$ 5.000</strong>. O restante, Master Perform, Mapa da Consultoria Online e ingresso no Summit, você está levando <strong class="text-brand-accent">basicamente de graça.</strong>
+                                </p>
+                                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-8">
+                                    <span class="flex items-center gap-2 text-xs text-brand-textSecondary uppercase font-bold tracking-widest bg-white/5 px-4 py-2 rounded-lg border border-white/10"><i class="fa-solid fa-shield-halved text-brand-primary"></i> Compra Segura</span>
+                                    <span class="flex items-center gap-2 text-xs text-brand-textSecondary uppercase font-bold tracking-widest bg-white/5 px-4 py-2 rounded-lg border border-white/10"><i class="fa-solid fa-rotate-left text-brand-primary"></i> 7 Dias de Garantia</span>
+                                </div>
+                            </div>
+
+                            <!-- Checkout Box -->
+                            <div class="rounded-3xl bg-brand-bg border border-white/10 p-8 md:p-10 text-center relative shadow-2xl ring-1 ring-white/5">
+                                <div class="absolute -top-4 -right-4 bg-gradient-to-br from-red-500 to-red-700 text-white text-xs font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-[0_0_20px_rgba(239,68,68,0.5)] transform rotate-6 border border-white/20">
+                                    72% OFF
+                                </div>
+                                
+                                <p class="text-brand-textSecondary line-through mb-2 text-lg font-medium">De: R$ 8.291</p>
+                                <div class="mb-4">
+                                    <p class="text-xs font-bold text-brand-textSecondary uppercase tracking-widest mb-2">Por apenas</p>
+                                    <div class="font-heading text-5xl font-black text-white flex justify-center items-baseline gap-2">
+                                        <span class="text-2xl text-brand-textSecondary">18x</span>
+                                        <span>249</span>
+                                        <span class="text-xl text-brand-textSecondary">,00</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-[10px] font-bold text-brand-accent mb-8 bg-brand-accent/10 inline-block px-4 py-2 rounded-xl border border-brand-accent/20 uppercase tracking-widest">
+                                    <i class="fa-solid fa-credit-card mr-1"></i> Cartão Recorrente
+                                </p>
+                                
+                                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8"></div>
+                                
+                                <p class="text-sm font-bold text-brand-textSecondary mb-8 uppercase tracking-widest">
+                                    ou R$ 3.990 à vista
+                                </p>
+
+                                <button type="button" class="btn-abrir-popup btn-premium group relative w-full py-5 rounded-xl border-0 cursor-pointer font-black uppercase tracking-[0.1em]">
+                                    <span class="relative">Garantir Minha Vaga</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="garantia" class="py-20 bg-white border-y border-slate-200">
+            <div class="mx-auto max-w-4xl px-6 text-center">
+                <h2 class="font-heading text-3xl font-black text-slate-900">Garantia incondicional de 7 dias</h2>
+                <p class="mt-4 text-slate-600">Se por qualquer motivo você não ficar satisfeito nos primeiros 7 dias após a compra, devolvemos 100% do seu investimento, sem perguntas e sem burocracia. O risco é todo nosso.</p>
+            </div>
+        </section>
+
+        <section id="faq" class="py-24 bg-slate-50">
+            <div class="mx-auto max-w-4xl px-6">
+                <h2 class="font-heading text-3xl font-black text-slate-900 text-center mb-12">Perguntas Frequentes</h2>
+                <div class="space-y-4">
+                    <details class="rounded-2xl bg-white border border-slate-200 p-6"><summary class="font-bold text-slate-900 cursor-pointer">Quando começa meu acesso após a compra?</summary><p class="mt-3 text-slate-600 text-sm">Imediatamente após a confirmação do pagamento você já recebe os acessos por e-mail.</p></details>
+                    <details class="rounded-2xl bg-white border border-slate-200 p-6"><summary class="font-bold text-slate-900 cursor-pointer">O acesso ao Master Perform e ao Mapa é vitalício?</summary><p class="mt-3 text-slate-600 text-sm">Sim, com todas as atualizações. A Pós tem prazo de acesso conforme a turma.</p></details>
+                    <details class="rounded-2xl bg-white border border-slate-200 p-6"><summary class="font-bold text-slate-900 cursor-pointer">Como funciona o ingresso do Summit?</summary><p class="mt-3 text-slate-600 text-sm">Você recebe o ingresso Smart para os dias 17 e 18 de outubro em Curitiba/PR. Instruções por e-mail.</p></details>
+                    <details class="rounded-2xl bg-white border border-slate-200 p-6"><summary class="font-bold text-slate-900 cursor-pointer">O que é o cartão recorrente?</summary><p class="mt-3 text-slate-600 text-sm">18x de R$ 249 em cobrança mensal automática até completar as parcelas, não é parcelamento tradicional.</p></details>
+                    <details class="rounded-2xl bg-white border border-slate-200 p-6"><summary class="font-bold text-slate-900 cursor-pointer">Posso parcelar?</summary><p class="mt-3 text-slate-600 text-sm">Sim, em até 18x de R$ 249 no cartão recorrente ou R$ 3.990 à vista.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section id="urgencia" class="py-24 relative">
+            <div class="mx-auto max-w-4xl px-6 text-center">
+                <h2 class="font-heading text-4xl font-black text-white md:text-5xl">Essa oferta encerra quando o contador zerar.</h2>
+                <p class="mt-5 text-slate-300 text-lg">Quando o aniversário acabar, os produtos voltam ao valor cheio de R$ 8.291.</p>
+                <button type="button" class="btn-abrir-popup btn-premium inline-flex items-center gap-3 rounded-full mt-10 px-12 py-5 text-sm font-black uppercase border-0 cursor-pointer">GARANTIR MINHA VAGA AGORA <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <footer id="rodape" class="bg-blue-500 text-black pt-16 pb-24 relative z-20 overflow-hidden"> 
+        <div class="w-full overflow-hidden mb-16 select-none flex items-center">
+            <div class="flex whitespace-nowrap animate-marquee w-max">
+                <div class="flex items-center gap-10 px-5">
+                    <span class="text-7xl md:text-[110px] font-black uppercase tracking-widest text-outline-hover">Oferta de Aniversário</span>
+                    <i class="fas fa-star text-black text-4xl opacity-20"></i>
+                    <span class="text-7xl md:text-[110px] font-black uppercase tracking-widest text-outline-hover">Acesso Completo PTA</span>
+                </div>
+                <div class="flex items-center gap-10 px-5">
+                    <span class="text-7xl md:text-[110px] font-black uppercase tracking-widest text-outline-hover">Oferta de Aniversário</span>
+                    <i class="fas fa-star text-black text-4xl opacity-20"></i>
+                    <span class="text-7xl md:text-[110px] font-black uppercase tracking-widest text-outline-hover">Acesso Completo PTA</span>
+                </div>
+            </div>
+        </div>
+        <div class="mx-auto px-6 max-w-6xl">
+            <div class="grid md:grid-cols-12 gap-12 mb-12">
+                <div class="md:col-span-4">
+                    <a href="#" class="inline-block hover:opacity-80 transition-opacity">
+                        <img src="./logoPTA.svg" alt="Personal Trainer Academy" class="h-14 w-auto" width="160" height="56" loading="lazy" decoding="async">
+                    </a>
+                    <p class="mt-4 text-sm text-black/70 max-w-sm">O ecossistema definitivo para Personal Trainers que buscam alavancar a carreira e escalar resultados.</p>
+                </div>
+                <div class="md:col-span-2 md:col-start-7">
+                    <h4 class="font-black uppercase text-sm mb-4">Navegação</h4>
+                    <ul class="space-y-2 text-sm text-black/70">
+                        <li><a href="#hero">Início</a></li>
+                        <li><a href="#oferta">Oferta</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3">
+                    <h4 class="font-black uppercase text-sm mb-4">Contato</h4>
+                    <a href="tel:+5541988239396" class="text-sm font-bold">+55 (41) 98823-9396</a>
+                </div>
+            </div>
+            <p class="text-xs text-black/60 border-t border-black/10 pt-8">&copy; 2026 Personal Trainer Academy. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="popup-inscricao" class="popup-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md" aria-hidden="true">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="popup-card relative glass-panel border border-cyan-400/25 rounded-3xl max-w-md w-full p-8 md:p-10 animate-[fadeIn_0.35s_ease-out]">
+            <button type="button" onclick="fecharPopupCard(this)" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-cyan-500 flex items-center justify-center text-slate-400 border-0 cursor-pointer" aria-label="Fechar"><i class="fas fa-times text-xs"></i></button>
+            <div class="popup-intro text-center mb-8">
+                <p class="text-cyan-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-2">Oferta de Aniversário PTA</p>
+                <h3 class="font-heading text-2xl font-black text-white">Garanta sua vaga</h3>
+                <p class="text-sm text-slate-400 mt-2">Preencha os dados para continuar.</p>
+            </div>
+            <form class="popup-form space-y-4" data-webhook="https://hook.us1.make.com/bj1q14346ezeybpcqjb9ctea89aoatvn?produto=PTA-ANIV-BUNDLE" data-redirect="https://wa.me/5541988239396?text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20no%20bundle%20de%20anivers%C3%A1rio%20da%20PTA." data-submit-label="Continuar">
+                <input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_term" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_content" value=""><input type="hidden" name="url" value="">
+                <div><label class="block text-[11px] font-bold text-slate-400 uppercase mb-2">Nome</label><input type="text" name="name" required class="lead-nome w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white focus:border-cyan-400 outline-none" placeholder="Seu nome completo"></div>
+                <div><label class="block text-[11px] font-bold text-slate-400 uppercase mb-2">Email</label><input type="email" name="email" required class="lead-email w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white focus:border-cyan-400 outline-none" placeholder="seu@email.com"></div>
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-400 uppercase mb-2">Telefone</label>
+                    <div class="flex rounded-xl border border-white/10 bg-slate-900/80 overflow-hidden focus-within:border-cyan-400"><span class="px-4 py-3 bg-blue-600 text-white font-bold text-sm">+55</span><input type="tel" required class="lead-phone flex-1 px-4 py-3 bg-transparent text-white outline-none" placeholder="(11) 99999-9999" maxlength="15"></div>
+                    <p class="error-msg text-red-400 text-[10px] mt-2 hidden uppercase">Informe DDD e número.</p>
+                </div>
+                <p class="form-send-error text-red-400 text-[10px] text-center hidden uppercase">Não foi possível enviar.</p>
+                <button type="submit" class="btn-submit btn-premium w-full py-4 rounded-xl text-xs font-black uppercase border-0 cursor-pointer">Continuar</button>
+            </form>
+            <div class="popup-success hidden text-center py-4 space-y-4">
+                <div class="w-14 h-14 rounded-full bg-cyan-500/20 flex items-center justify-center mx-auto"><i class="fas fa-check text-cyan-400"></i></div>
+                <p class="text-white font-bold">Redirecionando…</p>
+                <button type="button" onclick="fecharPopupCard(this)" class="w-full py-3 rounded-xl border border-white/15 text-white text-xs uppercase">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    function syncTrackingFields() {
+        const keys = ['utm_source','utm_term','utm_campaign','utm_medium','utm_content'];
+        const params = new URLSearchParams(window.location.search);
+        keys.forEach(key => {
+            const fromUrl = params.get(key);
+            if (fromUrl) try { sessionStorage.setItem(key, fromUrl); } catch(e) {}
+            let val = fromUrl || '';
+            if (!val) try { val = sessionStorage.getItem(key) || ''; } catch(e) {}
+            document.querySelectorAll('[name="'+key+'"]').forEach(el => el.value = val);
+        });
+        document.querySelectorAll('[name="url"]').forEach(el => el.value = window.location.href);
+    }
+    function resetPopupCard(card) {
+        if (!card) return;
+        card.querySelector('.popup-intro')?.classList.remove('hidden');
+        const form = card.querySelector('.popup-form');
+        const success = card.querySelector('.popup-success');
+        if (form) { form.classList.remove('hidden'); form.reset(); const b = form.querySelector('.btn-submit'); if (b) { b.disabled = false; b.innerHTML = form.dataset.submitLabel || 'Continuar'; b.classList.remove('opacity-70'); } form.querySelector('.error-msg')?.classList.add('hidden'); }
+        success?.classList.add('hidden');
+        card.querySelector('.form-send-error')?.classList.add('hidden');
+    }
+    function abrirPopupPorEl(el) { if (!el) return; syncTrackingFields(); resetPopupCard(el.querySelector('.popup-card')); el.classList.remove('hidden'); el.classList.add('flex'); el.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function fecharPopupPorEl(el) { if (!el) return; el.classList.add('hidden'); el.classList.remove('flex'); el.setAttribute('aria-hidden','true'); if (!document.querySelector('.popup-overlay:not(.hidden)')) document.body.style.overflow=''; }
+    function abrirPopupInscricao() { abrirPopupPorEl(document.getElementById('popup-inscricao')); }
+    function fecharPopupCard(btn) { fecharPopupPorEl(btn?.closest?.('.popup-overlay')); }
+    window.abrirPopupInscricao = abrirPopupInscricao;
+    window.abrirModal = abrirPopupInscricao;
+    window.fecharPopupCard = fecharPopupCard;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof AOS !== 'undefined') AOS.init({ once: true, offset: 50, duration: 800 });
+        syncTrackingFields();
+        document.querySelectorAll('.btn-abrir-popup').forEach(b => b.addEventListener('click', e => { e.preventDefault(); abrirPopupInscricao(); }));
+        document.querySelectorAll('.popup-overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) fecharPopupPorEl(o); }));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.popup-overlay:not(.hidden)').forEach(fecharPopupPorEl); });
+        document.querySelectorAll('.popup-form .lead-phone').forEach(input => {
+            input.addEventListener('input', function(e) {
+                let v = e.target.value.replace(/\D/g,''); if (v.startsWith('55') && v.length>2) v=v.slice(2); v=v.slice(0,11);
+                let f=v; if(v.length>2) f='('+v.slice(0,2)+') '+v.slice(2); if(v.length>7) f=f.slice(0,10)+'-'+f.slice(10);
+                e.target.value=f; e.target.closest('form')?.querySelector('.error-msg')?.classList.add('hidden');
+            });
+        });
+        document.querySelectorAll('.popup-form').forEach(form => {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const btn = this.querySelector('.btn-submit'), err = this.querySelector('.error-msg'), sendErr = this.querySelector('.form-send-error');
+                const tel = this.querySelector('.lead-phone');
+                const nome = (this.querySelector('.lead-nome')?.value||'').trim(), email = (this.querySelector('.lead-email')?.value||'').trim();
+                const phone = (tel?.value||'').replace(/\D/g,'');
+                if (phone.length < 10) { err?.classList.remove('hidden'); tel?.focus(); return; }
+                syncTrackingFields();
+                btn.disabled = true; btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Processando...'; btn.classList.add('opacity-70');
+                const payload = { nome, email, telefone: phone, utm_source: this.querySelector('[name=utm_source]')?.value||'', utm_term: this.querySelector('[name=utm_term]')?.value||'', utm_campaign: this.querySelector('[name=utm_campaign]')?.value||'', utm_medium: this.querySelector('[name=utm_medium]')?.value||'', utm_content: this.querySelector('[name=utm_content]')?.value||'', url: this.querySelector('[name=url]')?.value||location.href };
+                const u = new URL(this.dataset.webhook);
+                Object.entries({name:payload.nome,email:payload.email,telefone:payload.telefone,...payload}).forEach(([k,v]) => u.searchParams.set(k, v));
+                let ok = false;
+                try { const r = await fetch(u.href, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) }); ok = r.ok; } catch(_) { try { await fetch(u.href, { method:'POST', mode:'no-cors', keepalive:true }); ok = true; } catch(e2) { ok = false; } }
+                const redirect = (this.dataset.redirect||'').trim();
+                if (ok && redirect) { window.location.href = redirect.includes('wa.me') ? redirect : redirect; return; }
+                btn.disabled = false; btn.innerHTML = this.dataset.submitLabel || 'Continuar'; btn.classList.remove('opacity-70');
+                if (ok) { this.classList.add('hidden'); this.closest('.popup-card')?.querySelector('.popup-intro')?.classList.add('hidden'); this.closest('.popup-card')?.querySelector('.popup-success')?.classList.remove('hidden'); }
+                else sendErr?.classList.remove('hidden');
+            });
+        });
+        const nav = document.getElementById('nav');
+        if (nav) window.addEventListener('scroll', () => nav.classList.toggle('drop-shadow-xl', scrollY > 50));
+    });
+    </script>
+</body>
+</html>

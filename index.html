@@ -1332,10 +1332,11 @@ document.addEventListener('DOMContentLoaded', function() {
         for (const el of els) {
             if (el === nav || nav.contains(el)) continue;
             const bg = window.getComputedStyle(el).backgroundColor;
-            const m = bg.match(/\d+/g);
+            const m = bg.match(/[\d.]+/g);
             if (!m) continue;
-            const [r, g, b, a] = m.map(Number);
-            if ((a !== undefined ? a : 1) < 0.05) continue; // skip transparent
+            const r = Number(m[0]), g = Number(m[1]), b = Number(m[2]);
+            const a = m[3] !== undefined ? parseFloat(m[3]) : 1;
+            if (a < 0.05) continue;
             const lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
             return lum < 0.35; // dark if luminance < 35%
         }

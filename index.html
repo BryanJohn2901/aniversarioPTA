@@ -85,6 +85,29 @@
         .animate-marquee { animation: marquee 40s linear infinite; }
         .text-outline-k { color: transparent; -webkit-text-stroke: 1px rgba(0,0,0,.2); }
 
+        /* ─── Faixa 6 anos ─── */
+        .faixa-anos {
+            position: relative;
+            overflow: hidden;
+            border-y: 1px solid rgba(251, 191, 36, 0.3);
+            background: linear-gradient(to right, #b45309, #f59e0b, #b45309);
+            padding: 0.875rem 0;
+            user-select: none;
+        }
+        .faixa-anos::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+            pointer-events: none;
+        }
+        .faixa-anos--bleed {
+            width: 100vw;
+            max-width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+        }
+
         /* ─── Popup ─── */
         .glass-panel { background: rgba(15,23,42,.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.05); }
         @keyframes fadeIn { from{opacity:0;transform:scale(.96)} to{opacity:1;transform:scale(1)} }
@@ -247,6 +270,30 @@
                 </div>
             </div>
 
+            <!-- FAIXA 6 anos — só mobile, largura total -->
+            <div class="faixa-anos faixa-anos--bleed col-span-full lg:hidden">
+                <div class="relative flex overflow-hidden">
+                    <div class="flex whitespace-nowrap animate-marquee w-max items-center">
+                        <div class="flex items-center gap-8 px-6">
+                            <span class="font-heading text-sm font-black uppercase tracking-[0.14em] text-[#020617]">6 anos de Personal Trainer Academy</span>
+                            <i class="fa-solid fa-star text-[#020617]/35 text-xs" aria-hidden="true"></i>
+                            <span class="font-heading text-sm font-black uppercase tracking-[0.14em] text-[#020617]">6 anos de Personal Trainer Academy</span>
+                            <i class="fa-solid fa-star text-[#020617]/35 text-xs" aria-hidden="true"></i>
+                            <span class="font-heading text-sm font-black uppercase tracking-[0.14em] text-[#020617]">6 anos de Personal Trainer Academy</span>
+                            <i class="fa-solid fa-star text-[#020617]/35 text-xs" aria-hidden="true"></i>
+                        </div>
+                        <div class="flex items-center gap-8 px-6" aria-hidden="true">
+                            <span class="font-heading text-sm font-black uppercase tracking-[0.14em] text-[#020617]">6 anos de Personal Trainer Academy</span>
+                            <i class="fa-solid fa-star text-[#020617]/35 text-xs"></i>
+                            <span class="font-heading text-sm font-black uppercase tracking-[0.14em] text-[#020617]">6 anos de Personal Trainer Academy</span>
+                            <i class="fa-solid fa-star text-[#020617]/35 text-xs"></i>
+                            <span class="font-heading text-sm font-black uppercase tracking-[0.14em] text-[#020617]">6 anos de Personal Trainer Academy</span>
+                            <i class="fa-solid fa-star text-[#020617]/35 text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- pricing box -->
             <div data-aos="fade-up" data-aos-delay="150">
                 <div class="relative">
@@ -298,8 +345,7 @@
 </section>
 
 <!-- FAIXA — 6 anos PTA -->
-<div class="relative z-10 overflow-hidden border-y border-amber-400/30 bg-gradient-to-r from-amber-700 via-amber-500 to-amber-700 py-4 md:py-5 select-none">
-    <div class="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent)] pointer-events-none"></div>
+<div class="faixa-anos relative z-10 py-4 md:py-5">
     <div class="relative flex overflow-hidden">
         <div class="flex whitespace-nowrap animate-marquee w-max items-center">
             <div class="flex items-center gap-8 px-6">

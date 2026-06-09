@@ -88,7 +88,7 @@
         /* ─── Popup ─── */
         .glass-panel { background: rgba(15,23,42,.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.05); }
         @keyframes fadeIn { from{opacity:0;transform:scale(.96)} to{opacity:1;transform:scale(1)} }
-        #popup-inscricao { z-index: 2147483646; }
+        #popup-azul { z-index: 2147483646; }
 
         /* ─── Gradients ─── */
         .text-grad-blue  { background: linear-gradient(135deg,#e0f2fe,#38bdf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -1094,101 +1094,191 @@ if (document.readyState === 'complete') {
 </footer>
 
 <!-- POPUP -->
-<div id="popup-inscricao" class="popup-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md" aria-hidden="true">
+<div id="popup-azul" class="popup-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md" aria-hidden="true">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/8 rounded-full blur-[120px] pointer-events-none"></div>
     <div class="popup-card relative glass-panel border border-amber-400/20 rounded-3xl max-w-md w-full p-8 md:p-10 animate-[fadeIn_0.35s_ease-out]">
-        <button type="button" onclick="fecharPopupCard(this)" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-amber-500 flex items-center justify-center text-slate-400 border-0 cursor-pointer" aria-label="Fechar"><i class="fas fa-times text-xs"></i></button>
-        <div class="popup-intro text-center mb-8">
-            <p class="text-amber-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-2">Oferta de Aniversário PTA</p>
-            <h3 class="font-heading text-2xl font-black text-white">Garanta sua vaga</h3>
-            <p class="text-sm text-slate-400 mt-2">Preencha os dados para continuar.</p>
+        <button type="button" onclick="fecharPopupAzul()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-amber-500 flex items-center justify-center text-slate-400 border-0 cursor-pointer" aria-label="Fechar"><i class="fas fa-times text-xs"></i></button>
+        <div class="text-center mb-6">
+            <h3 class="font-heading text-2xl font-black text-white uppercase tracking-wide mb-1">Preencha seus dados</h3>
+            <p class="text-sm text-slate-400 mb-6">Para liberar seu link de inscrição com segurança.</p>
         </div>
-        <form class="popup-form space-y-4" data-webhook="https://hook.us1.make.com/bj1q14346ezeybpcqjb9ctea89aoatvn?produto=PTA-ANIV-BUNDLE" data-redirect="https://wa.me/5541988239396?text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20na%20oferta%20de%20anivers%C3%A1rio%20da%20PTA." data-submit-label="Continuar">
-            <input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_term" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_content" value=""><input type="hidden" name="url" value="">
-            <div><label class="block text-[11px] font-bold text-slate-400 uppercase mb-2">Nome</label><input type="text" name="name" required class="lead-nome w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white focus:border-amber-400 outline-none" placeholder="Seu nome completo"></div>
-            <div><label class="block text-[11px] font-bold text-slate-400 uppercase mb-2">Email</label><input type="email" name="email" required class="lead-email w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white focus:border-amber-400 outline-none" placeholder="seu@email.com"></div>
+        <form id="form_bio" class="space-y-4 mt-6 popup-form">
             <div>
-                <label class="block text-[11px] font-bold text-slate-400 uppercase mb-2">Telefone</label>
-                <div class="flex rounded-xl border border-white/10 bg-slate-900/80 overflow-hidden focus-within:border-amber-400"><span class="px-4 py-3 bg-amber-600 text-white font-bold text-sm">+55</span><input type="tel" required class="lead-phone flex-1 px-4 py-3 bg-transparent text-white outline-none" placeholder="(11) 99999-9999" maxlength="15"></div>
-                <p class="error-msg text-red-400 text-[10px] mt-2 hidden uppercase">Informe DDD e número.</p>
+                <label for="lead-nome" class="block text-sm font-medium text-slate-300 mb-1">Nome</label>
+                <input type="text" id="lead-nome" name="nome" required placeholder="Seu nome completo" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:border-amber-400 outline-none transition">
             </div>
-            <p class="form-send-error text-red-400 text-[10px] text-center hidden uppercase">Não foi possível enviar.</p>
-            <button type="submit" class="btn-submit btn-gold w-full py-4 rounded-xl text-xs font-black uppercase border-0 cursor-pointer">Continuar</button>
+            <div>
+                <label for="lead-email" class="block text-sm font-medium text-slate-300 mb-1">Email</label>
+                <input type="email" id="lead-email" name="email" required placeholder="seu@email.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:border-amber-400 outline-none transition">
+            </div>
+            <div>
+                <label for="lead-phone" class="block text-sm font-medium text-slate-300 mb-1">Telefone</label>
+                <div class="flex rounded-xl overflow-hidden border border-white/10 focus-within:border-amber-400 bg-slate-900/80">
+                    <span class="inline-flex items-center px-4 py-3 bg-amber-600 text-white font-bold shrink-0">+55</span>
+                    <input type="tel" id="lead-phone" name="phone" required placeholder="(11) 99999-9999" maxlength="15" autocomplete="tel" class="flex-1 px-4 py-3 bg-transparent text-white placeholder-slate-500 outline-none min-w-0 mask-telefone">
+                </div>
+                <p class="error-msg text-red-400 text-xs mt-1 hidden">Informe o DDD e o número completo.</p>
+            </div>
+            <input type="hidden" id="utm_source" name="utm_source" value="">
+            <input type="hidden" id="utm_term" name="utm_term" value="">
+            <input type="hidden" id="utm_campaign" name="utm_campaign" value="">
+            <input type="hidden" id="utm_medium" name="utm_medium" value="">
+            <input type="hidden" id="utm_content" name="utm_content" value="">
+            <input type="hidden" id="url" name="url" value="">
+            <button type="submit" class="btn-submit btn-gold w-full py-4 mt-4 rounded-xl text-xs font-black uppercase border-0 cursor-pointer tracking-widest">
+                Avançar para Pagamento
+            </button>
         </form>
-        <div class="popup-success hidden text-center py-4 space-y-4">
-            <div class="w-14 h-14 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto"><i class="fas fa-check text-amber-400"></i></div>
-            <p class="text-white font-bold">Redirecionando…</p>
-            <button type="button" onclick="fecharPopupCard(this)" class="w-full py-3 rounded-xl border border-white/15 text-white text-xs uppercase">Fechar</button>
-        </div>
     </div>
 </div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-function syncTrackingFields() {
-    const keys = ['utm_source','utm_term','utm_campaign','utm_medium','utm_content'];
+function getUTMs() {
     const params = new URLSearchParams(window.location.search);
-    keys.forEach(key => {
-        const fromUrl = params.get(key);
-        if (fromUrl) try { sessionStorage.setItem(key, fromUrl); } catch(e) {}
-        let val = fromUrl || '';
-        if (!val) try { val = sessionStorage.getItem(key) || ''; } catch(e) {}
-        document.querySelectorAll('[name="'+key+'"]').forEach(el => el.value = val);
+    const utms = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(p => {
+        if (params.get(p)) utms[p] = params.get(p);
     });
-    document.querySelectorAll('[name="url"]').forEach(el => el.value = window.location.href);
+    const stored = JSON.parse(localStorage.getItem('utm_params') || '{}');
+    const merged = { ...stored, ...utms };
+    if (Object.keys(utms).length > 0) localStorage.setItem('utm_params', JSON.stringify(merged));
+    return merged;
 }
-function resetPopupCard(card) {
-    if (!card) return;
-    card.querySelector('.popup-intro')?.classList.remove('hidden');
-    const form = card.querySelector('.popup-form');
-    const success = card.querySelector('.popup-success');
-    if (form) { form.classList.remove('hidden'); form.reset(); const b = form.querySelector('.btn-submit'); if (b) { b.disabled = false; b.innerHTML = form.dataset.submitLabel || 'Continuar'; b.classList.remove('opacity-70'); } form.querySelector('.error-msg')?.classList.add('hidden'); }
-    success?.classList.add('hidden');
-    card.querySelector('.form-send-error')?.classList.add('hidden');
+function utmsParaWebhook() {
+    const u = getUTMs();
+    return {
+        utm_source: u.utm_source || '',
+        utm_medium: u.utm_medium || '',
+        utm_campaign: u.utm_campaign || '',
+        utm_term: u.utm_term || '',
+        utm_content: u.utm_content || ''
+    };
 }
-function abrirPopupPorEl(el) { if (!el) return; syncTrackingFields(); resetPopupCard(el.querySelector('.popup-card')); el.classList.remove('hidden'); el.classList.add('flex'); el.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
-function fecharPopupPorEl(el) { if (!el) return; el.classList.add('hidden'); el.classList.remove('flex'); el.setAttribute('aria-hidden','true'); if (!document.querySelector('.popup-overlay:not(.hidden)')) document.body.style.overflow=''; }
-function abrirPopupInscricao() { abrirPopupPorEl(document.getElementById('popup-inscricao')); }
-function fecharPopupCard(btn) { fecharPopupPorEl(btn?.closest?.('.popup-overlay')); }
-window.abrirPopupInscricao = abrirPopupInscricao;
-window.abrirModal = abrirPopupInscricao;
-window.fecharPopupCard = fecharPopupCard;
+function abrirPopupAzul() {
+    const m = document.getElementById('popup-azul');
+    const utm = utmsParaWebhook();
+    const uSource = document.getElementById('utm_source');
+    const uTerm = document.getElementById('utm_term');
+    const uCampaign = document.getElementById('utm_campaign');
+    const uMedium = document.getElementById('utm_medium');
+    const uContent = document.getElementById('utm_content');
+    const urlInput = document.getElementById('url');
+    if (uSource) uSource.value = utm.utm_source || '';
+    if (uTerm) uTerm.value = utm.utm_term || '';
+    if (uCampaign) uCampaign.value = utm.utm_campaign || '';
+    if (uMedium) uMedium.value = utm.utm_medium || '';
+    if (uContent) uContent.value = utm.utm_content || '';
+    if (urlInput) urlInput.value = window.location.href;
+    m.classList.remove('hidden');
+    m.classList.add('flex');
+    m.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+function fecharPopupAzul() {
+    const m = document.getElementById('popup-azul');
+    m.classList.add('hidden');
+    m.classList.remove('flex');
+    m.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+window.abrirPopupAzul = abrirPopupAzul;
+window.abrirPopupInscricao = abrirPopupAzul;
+window.abrirModal = abrirPopupAzul;
+window.fecharPopupAzul = fecharPopupAzul;
 
 document.addEventListener('DOMContentLoaded', function() {
     if (typeof AOS !== 'undefined') AOS.init({ once: true, offset: 50, duration: 800 });
-    syncTrackingFields();
-    document.querySelectorAll('.btn-abrir-popup').forEach(b => b.addEventListener('click', e => { e.preventDefault(); abrirPopupInscricao(); }));
-    document.querySelectorAll('.popup-overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) fecharPopupPorEl(o); }));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.popup-overlay:not(.hidden)').forEach(fecharPopupPorEl); });
-    document.querySelectorAll('.popup-form .lead-phone').forEach(input => {
-        input.addEventListener('input', function(e) {
-            let v = e.target.value.replace(/\D/g,''); if (v.startsWith('55') && v.length>2) v=v.slice(2); v=v.slice(0,11);
-            let f=v; if(v.length>2) f='('+v.slice(0,2)+') '+v.slice(2); if(v.length>7) f=f.slice(0,10)+'-'+f.slice(10);
-            e.target.value=f; e.target.closest('form')?.querySelector('.error-msg')?.classList.add('hidden');
+    getUTMs();
+    document.querySelectorAll('.btn-abrir-popup').forEach(b => b.addEventListener('click', e => { e.preventDefault(); abrirPopupAzul(); }));
+    document.getElementById('popup-azul')?.addEventListener('click', e => { if (e.target.id === 'popup-azul') fecharPopupAzul(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharPopupAzul(); });
+    document.querySelectorAll('.mask-telefone').forEach(input => {
+        input.addEventListener('input', function() {
+            let d = this.value.replace(/\D/g, '');
+            if (d.startsWith('55') && d.length > 2) d = d.slice(2);
+            d = d.slice(0, 11);
+            let r = '';
+            if (d.length > 0) r = '(' + d.slice(0, 2);
+            if (d.length > 2) r += ') ' + d.slice(2, 7);
+            if (d.length > 7) r += '-' + d.slice(7, 11);
+            this.value = r;
+            const err = this.closest('form').querySelector('.error-msg');
+            if (err) err.style.display = 'none';
         });
     });
-    document.querySelectorAll('.popup-form').forEach(form => {
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('.btn-submit'), err = this.querySelector('.error-msg'), sendErr = this.querySelector('.form-send-error');
-            const tel = this.querySelector('.lead-phone');
-            const nome = (this.querySelector('.lead-nome')?.value||'').trim(), email = (this.querySelector('.lead-email')?.value||'').trim();
-            const phone = (tel?.value||'').replace(/\D/g,'');
-            if (phone.length < 10) { err?.classList.remove('hidden'); tel?.focus(); return; }
-            syncTrackingFields();
-            btn.disabled = true; btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Processando...'; btn.classList.add('opacity-70');
-            const payload = { nome, email, telefone: phone, utm_source: this.querySelector('[name=utm_source]')?.value||'', utm_term: this.querySelector('[name=utm_term]')?.value||'', utm_campaign: this.querySelector('[name=utm_campaign]')?.value||'', utm_medium: this.querySelector('[name=utm_medium]')?.value||'', utm_content: this.querySelector('[name=utm_content]')?.value||'', url: this.querySelector('[name=url]')?.value||location.href };
-            const u = new URL(this.dataset.webhook);
-            Object.entries({name:payload.nome,email:payload.email,telefone:payload.telefone,...payload}).forEach(([k,v]) => u.searchParams.set(k, v));
-            let ok = false;
-            try { const r = await fetch(u.href, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) }); ok = r.ok; } catch(_) { try { await fetch(u.href, { method:'POST', mode:'no-cors', keepalive:true }); ok = true; } catch(e2) { ok = false; } }
-            const redirect = (this.dataset.redirect||'').trim();
-            if (ok && redirect) { window.location.href = redirect; return; }
-            btn.disabled = false; btn.innerHTML = this.dataset.submitLabel || 'Continuar'; btn.classList.remove('opacity-70');
-            if (ok) { this.classList.add('hidden'); this.closest('.popup-card')?.querySelector('.popup-intro')?.classList.add('hidden'); this.closest('.popup-card')?.querySelector('.popup-success')?.classList.remove('hidden'); }
-            else sendErr?.classList.remove('hidden');
-        });
-    });
+    async function handleFormSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const btn = form.querySelector('.btn-submit');
+        const phoneInput = form.querySelector('.mask-telefone');
+        const err = form.querySelector('.error-msg');
+        let num = phoneInput.value.replace(/\D/g, '');
+        if (num.length < 10) {
+            if (err) {
+                err.style.display = 'block';
+                err.classList.remove('hidden');
+            }
+            phoneInput.focus();
+            return;
+        }
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processando...';
+        const nome = form.nome.value.trim();
+        const email = form.email.value.trim();
+        let telefone = num;
+        telefone = '+55' + telefone;
+        const urlAtual = window.location.href;
+        const ut = utmsParaWebhook();
+        const produto = 'BM9';
+        const urlInput = document.getElementById('url');
+        if (urlInput) urlInput.value = urlAtual;
+        const payload = {
+            nome: nome,
+            email: email,
+            telefone: telefone,
+            utm_source: document.getElementById('utm_source')?.value || '',
+            utm_term: document.getElementById('utm_term')?.value || '',
+            utm_campaign: document.getElementById('utm_campaign')?.value || '',
+            utm_medium: document.getElementById('utm_medium')?.value || '',
+            utm_content: document.getElementById('utm_content')?.value || '',
+            url: document.getElementById('url')?.value || window.location.href
+        };
+        const WEBHOOK = 'https://hook.us1.make.com/bhigavwc6bfhskmnicov25r6jv9fnt1p?produto=' + produto;
+        const REDIRECT = 'https://wa.me/5541995395588?text=Quero%20saber%20mais%20sobre%20a%20p%C3%B3s%20gradua%C3%A7%C3%A3o%20em%20Biomec%C3%A2nica%20e%20reabilita%C3%A7%C3%A3o%20de%20les%C3%B5es';
+        try {
+            const webhookUrl = new URL(WEBHOOK);
+            webhookUrl.searchParams.set('nome', payload.nome);
+            webhookUrl.searchParams.set('email', payload.email);
+            webhookUrl.searchParams.set('telefone', payload.telefone);
+            webhookUrl.searchParams.set('utm_source', payload.utm_source);
+            webhookUrl.searchParams.set('utm_term', payload.utm_term);
+            webhookUrl.searchParams.set('utm_campaign', payload.utm_campaign);
+            webhookUrl.searchParams.set('utm_medium', payload.utm_medium);
+            webhookUrl.searchParams.set('utm_content', payload.utm_content);
+            webhookUrl.searchParams.set('url', payload.url);
+            await fetch(webhookUrl.toString(), {
+                method: 'POST',
+                mode: 'no-cors',
+                keepalive: true
+            });
+        } catch (errWebhook) {
+            console.error('Erro ao enviar webhook, prosseguindo com o redirecionamento.', errWebhook);
+        } finally {
+            const sep = REDIRECT.indexOf('?') !== -1 ? '&' : '?';
+            window.location.href = REDIRECT + sep +
+                'nome=' + encodeURIComponent(nome) +
+                '&email=' + encodeURIComponent(email) +
+                '&telefone=' + encodeURIComponent(telefone) +
+                '&utm_source=' + encodeURIComponent(ut.utm_source) +
+                '&utm_term=' + encodeURIComponent(ut.utm_term) +
+                '&utm_campaign=' + encodeURIComponent(ut.utm_campaign) +
+                '&utm_medium=' + encodeURIComponent(ut.utm_medium) +
+                '&utm_content=' + encodeURIComponent(ut.utm_content) +
+                '&url=' + encodeURIComponent(urlAtual);
+        }
+    }
+    document.getElementById('form_bio')?.addEventListener('submit', handleFormSubmit);
     const nav = document.getElementById('nav');
     function navSectionIsDark() {
         const probe = nav.getBoundingClientRect().bottom + 8;
